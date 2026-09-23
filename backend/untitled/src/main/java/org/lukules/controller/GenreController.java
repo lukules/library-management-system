@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GenreController {
     private final GenreService genreService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Genre> addGenre(@RequestBody Genre genre) {
         Genre createdGenre = genreService.createGenre(genre);
         return ResponseEntity.ok(createdGenre);
