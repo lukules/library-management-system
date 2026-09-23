@@ -1,4 +1,4 @@
-package org.example.modal;
+package org.lukules.modal;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
