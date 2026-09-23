@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class GenreServiceImplementation implements GenreService {
 
     private final GenreRepository genreRepository;
-    
+
 
     @Override
     public Genre createGenre(Genre genre) {
