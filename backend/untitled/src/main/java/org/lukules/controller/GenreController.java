@@ -17,10 +17,8 @@ public class GenreController {
 
     @PostMapping("/create")
     public ResponseEntity<GenreDTO> addGenre(@RequestBody GenreDTO genre) {
-        //GenreDTO createdGenre = genreService.createGenre(genre);
-        //return ResponseEntity.ok(createdGenre);
-
-        return null;
+        GenreDTO createdGenre = genreService.createGenre(genre);
+        return ResponseEntity.ok(createdGenre);
     }
 
 }
