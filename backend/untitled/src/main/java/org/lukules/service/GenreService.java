@@ -1,8 +1,8 @@
 package org.lukules.service;
 
-import org.lukules.modal.Genre;
+import org.lukules.payload.dto.GenreDTO;
 
 public interface GenreService {
-    Genre createGenre(Genre genre);
+    GenreDTO createGenre(GenreDTO genre);
 
 }

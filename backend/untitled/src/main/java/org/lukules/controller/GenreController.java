@@ -1,7 +1,7 @@
 package org.lukules.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.lukules.modal.Genre;
+import org.lukules.payload.dto.GenreDTO;
 import org.lukules.service.GenreService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +16,11 @@ public class GenreController {
     private final GenreService genreService;
 
     @PostMapping("/create")
-    public ResponseEntity<Genre> addGenre(@RequestBody Genre genre) {
-        Genre createdGenre = genreService.createGenre(genre);
-        return ResponseEntity.ok(createdGenre);
+    public ResponseEntity<GenreDTO> addGenre(@RequestBody GenreDTO genre) {
+        //GenreDTO createdGenre = genreService.createGenre(genre);
+        //return ResponseEntity.ok(createdGenre);
+
+        return null;
     }
 
 }
