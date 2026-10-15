@@ -6,9 +6,10 @@ import org.lukules.modal.Genre;
 import org.lukules.payload.dto.GenreDTO;
 import org.lukules.repository.GenreRepository;
 import org.lukules.service.GenreService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -41,6 +42,15 @@ public class GenreServiceImplementation implements GenreService {
 
 
         return dto;
+
+    }
+
+    @Override
+    public List<GenreDTO> getAllGenres() {
+        return genreRepository.findAll().stream()
+                .map(GenreMapper::toDTO)
+                .collect(Collectors.toList());
+
 
     }
 }
