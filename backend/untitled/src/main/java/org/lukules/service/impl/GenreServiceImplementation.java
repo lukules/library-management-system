@@ -1,6 +1,7 @@
 package org.lukules.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.lukules.mapper.GenreMapper;
 import org.lukules.modal.Genre;
 import org.lukules.payload.dto.GenreDTO;
 import org.lukules.repository.GenreRepository;
@@ -35,21 +36,7 @@ public class GenreServiceImplementation implements GenreService {
 
         Genre savedGenre = genreRepository.save(genre);
 
-        GenreDTO dto = GenreDTO.builder()
-                .id(savedGenre.getId())
-                .code(savedGenre.getCode())
-                .name(savedGenre.getName())
-                .description(savedGenre.getDescription())
-                .displayOrder(savedGenre.getDisplayOrder())
-                .active(savedGenre.getActive())
-                .createdAt(savedGenre.getCreatedAt())
-                .updatedAt(savedGenre.getUpdatedAt())
-                .build();
-
-        if(savedGenre.getParentGenre() != null) {
-            dto.setParentGenreId(savedGenre.getParentGenre().getId());
-            dto.setParentGenreName(savedGenre.getParentGenre().getName());
-        }
+        GenreDTO dto = GenreMapper.toDTO(savedGenre);
 
 
 
