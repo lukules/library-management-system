@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,6 +30,20 @@ public class GenreDTO {
 
     @Min(value = 0, message = "Display order cannot be negative")
     private Integer displayOrder = 0;
+
+    private Boolean active;
+
+    private Long parentGenreId;
+
+    private String parentGenreName;
+
+    private List<GenreDTO> subGenre;
+
+    private Long bookCount;
+
+    private LocalDateTime createDate;
+
+    private LocalDateTime updatedAt;
 
 
 
